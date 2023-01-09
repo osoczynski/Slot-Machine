@@ -1,0 +1,78 @@
+@mixin gui-item {
+	color: red;
+	width: 140px;
+	border-radius: 10%;
+	font-size: 40px;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	height: 100vh;
+	font-family: "open sans", roboto, sans-serif;
+	text-transform: uppercase;
+	.wrap {
+		position: absolute;
+		width: 631px;
+		height: 600px;
+		background-color: black;
+		border: 35px solid black;
+		border-radius: 10%;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		.machine {
+			position: absolute;
+			top: 191px;
+			left: 75px;
+			img {
+				margin: 0 10px;
+			}
+		}
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+			font-size: 50px;
+			color: red;
+		}
+		.main-img {
+			position: absolute;
+			top: 0px;
+		}
+		.gui {
+			position: absolute;
+			bottom: 0;
+			height: 140px;
+			width: 100%;
+			display: flex;
+			justify-content: space-evenly;
+
+			.play {
+				text-transform: uppercase;
+				@include gui-item;
+				text-decoration: none;
+			}
+
+			.bet {
+				@include gui-item;
+			}
+
+			.credit {
+				@include gui-item;
+				font-size: 30px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				height: 140px;
+				background-color: white;
+				p {
+					margin: 10px;
+				}
+			}
+		}
+	}
+}
